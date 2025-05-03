@@ -164,7 +164,7 @@ Security Configuration Assessment (SCA) results for Ubuntu 22.04 baseline checks
 ```
 wazuh-siem-homelab/
 ├── docker-compose.yml
-│   
+├── LICENSE
 ├── screenshots/
 │   ├── 01_dashboard.png
 │   ├── 02_agents.png

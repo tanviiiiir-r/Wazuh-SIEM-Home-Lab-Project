@@ -78,17 +78,40 @@ systemctl restart wazuh-agent
 
 ---
 
-## 📸 Screenshots 
+## 📸 Screenshots
 
+### 🖥️ 1. Wazuh Dashboard Login
 
-| Screenshot               | Description                                    |
-| ------------------------ | ---------------------------------------------- |
-| `01_dashboard.png`       | Wazuh Dashboard login page                     |
-| `02_agents.png`          | List of active agents                          |
-| `03_logs_stream.png`     | Real-time logs visible in the Wazuh dashboard  |
-| `04_syscheck_alerts.png` | Example of Syscheck alert for file changes     |
-| `05_sca_scan_result.png` | Sample SCA (Security Configuration Assessment) |
+![Wazuh Dashboard](screenshots/01_dashboard.png)  
+Wazuh Dashboard login page after successful installation.
 
+---
+
+### 🛰️ 2. Registered Agent List
+
+![Agents List](screenshots/02_agents.png)  
+This shows the connected agents including the `wazuh-victim`.
+
+---
+
+### 📡 3. Real-Time Logs in Discover
+
+![Logs Stream](screenshots/03_logs_stream.png)  
+Live streaming of logs from the victim container, accessible via the Discover panel.
+
+---
+
+### 🔐 4. Syscheck Alerts
+
+![Syscheck Alerts](screenshots/04_syscheck_alerts.png)  
+File integrity alerts detected by the Wazuh agent using Syscheck.
+
+---
+
+### 🛡️ 5. SCA Scan Results
+
+![SCA Results](screenshots/05_sca_scan_result.png)  
+Security Configuration Assessment (SCA) results for Ubuntu 22.04 baseline checks.
 
 ---
 

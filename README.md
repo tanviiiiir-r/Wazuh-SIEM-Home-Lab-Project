@@ -120,8 +120,7 @@ Security Configuration Assessment (SCA) results for Ubuntu 22.04 baseline checks
 ```
 wazuh-siem-homelab/
 ├── docker-compose.yml
-├── config/
-│   └── custom_wazuh_config.yml
+│   
 ├── screenshots/
 │   ├── 01_dashboard.png
 │   ├── 02_agents.png
@@ -142,7 +141,7 @@ wazuh-siem-homelab/
 
 ---
 
-## 🌍 Why This Project Matters (Erasmus & Academic Relevance)
+## 🌍 Why This Project Matters (Academic Relevance)
 
 This home lab setup offers hands-on experience with:
 
@@ -166,6 +165,6 @@ MIT License
 
 ## ✨ Author
 
-**Your Name**
+**Md Tanvir Rana**
 Cybersecurity & SIEM Enthusiast
-[LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourusername)
+[LinkedIn](https://linkedin.com/in/yourprofile) |

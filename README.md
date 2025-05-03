@@ -75,6 +75,50 @@ Run this inside the victim:
 /var/ossec/bin/agent-auth -m <WAZUH_MANAGER_IP>
 systemctl restart wazuh-agent
 ```
+## 🐧 Setting Up Ubuntu Victim & Kali Attacker (Manually in VirtualBox or VMware)
+
+> This section guides you through setting up a basic simulation lab using VirtualBox or VMware with Ubuntu as the monitored victim machine and Kali Linux as the attacker. This hybrid approach is useful if you're combining Docker with virtual machines.
+
+### 🔧 Ubuntu Victim Setup (Virtual Machine)
+
+1. **Download Ubuntu ISO** from the official website ([https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop)).
+2. **Create a new virtual machine** in VirtualBox/VMware:
+
+   * Allocate at least 2 GB RAM and 1 CPU.
+   * Use a dynamically allocated virtual hard disk (at least 15 GB).
+3. **Configure Networking**:
+
+   * Set the network adapter to **Bridged** or **Internal Network** (same as Kali).
+4. **Install and Configure Wazuh Agent**:
+
+   ```bash
+   curl -sO https://packages.wazuh.com/4.7/wazuh-agent_4.7.0-1_amd64.deb
+   sudo dpkg -i wazuh-agent_4.7.0-1_amd64.deb
+   sudo systemctl enable wazuh-agent
+   sudo systemctl start wazuh-agent
+   ```
+5. **Connect Agent to Wazuh Manager**:
+
+   * Edit `/var/ossec/etc/ossec.conf` and set the `<address>` to your Wazuh manager’s IP (from Docker).
+   * Restart agent: `sudo systemctl restart wazuh-agent`
+
+### 💻 Kali Linux Attacker Setup (Virtual Machine)
+
+1. **Download Kali Linux ISO** from [https://www.kali.org/get-kali/](https://www.kali.org/get-kali/).
+2. **Create a new virtual machine** similar to the Ubuntu setup:
+
+   * Allocate 2–4 GB RAM and 2 CPUs.
+   * Network: **Bridged** or **Internal Network** (same as Ubuntu VM).
+3. **Basic Recon & Simulations** (for optional testing):
+
+   ```bash
+   nmap -sS <victim_ip>
+   nc -vz <victim_ip> 22
+   ssh <victim_user>@<victim_ip>
+   ```
+4. **Use this machine** to simulate interaction and generate logs in the Wazuh manager.
+
+> ⚠️ Ensure both VMs can ping each other and the Docker Wazuh manager for agent logs to flow correctly.
 
 ---
 
